@@ -1,0 +1,13 @@
+<resources>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    
+    <dimen name="pop_item_padding">10dp</dimen>
+    <dimen name="pop_item_text_size">18sp</dimen>
+    <dimen name="pop_line_height">1dp</dimen>
+    <dimen name="pop_radius">8dp</dimen>
+
+    <dimen name="pop_action_sheet_text_size_title">16sp</dimen>
+    <dimen name="pop_action_sheet_text_size_message">14sp</dimen>
+</resources>
