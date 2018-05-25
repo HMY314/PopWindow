@@ -2,6 +2,8 @@ package com.hmy.popwindow.window;
 
 import android.app.Activity;
 import android.content.Context;
+import android.graphics.Rect;
+import android.os.Build;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
@@ -164,7 +166,16 @@ public class PopDownWindow extends PopupWindow implements PopWindowInterface, Vi
             } else {
                 throw new RuntimeException("必须至少添加一个PopItemView");
             }
-            showAsDropDown(view, 0, 0);
+            
+            if (Build.VERSION.SDK_INT < 24) {
+                showAsDropDown(view);
+            } else {
+                Rect visibleFrame = new Rect();
+                view.getGlobalVisibleRect(visibleFrame);
+                int height = view.getResources().getDisplayMetrics().heightPixels - visibleFrame.bottom;
+                setHeight(height);
+                showAsDropDown(view, 0, 0);
+            }
         }
     }
 
